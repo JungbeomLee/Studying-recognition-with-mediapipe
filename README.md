@@ -22,5 +22,5 @@ mediapipe version : 0.10.2
 ```python
 ## set detect seconds
 detection = CHECKOUT_STUDYING(seconds)
-score = detection.start_detection("--your image path")
+score = detection.start_detection("--your image path", "user_id")
 ```
