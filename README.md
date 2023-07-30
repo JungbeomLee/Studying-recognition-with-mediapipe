@@ -20,6 +20,7 @@ mediapipe version : 0.10.2
 
 ### function
 ```python
-detection = CHECKOUT_STUDYING()
+## set detect seconds
+detection = CHECKOUT_STUDYING(seconds)
 score = detection.start_detection("--your image path")
 ```

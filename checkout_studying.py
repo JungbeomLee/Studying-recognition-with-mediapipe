@@ -131,17 +131,9 @@ class CHECKOUT_STUDYING :
     
         return not_studying                                    
     def start_detection(self, image_path : str) :
-        cap = cv2.VideoCapture(0)
-        while cap.isOpened() :
-            success, image = cap.read()
-            if self.face_checkout(image) and self.hand_checkout(image) :
-                if self.user_score > 0 :
-                    self.user_score -= 2
-                    
-            cv2.imshow('MediaPipe Hands', cv2.flip(image, 1))
-            if cv2.waitKey(5) & 0xFF == 27:
-                break
+        image = cv2.imread(image_path)
+        if self.face_checkout(image) and self.hand_checkout(image) :
+            if self.user_score > 0 :
+                self.user_score -= 2
             
-        cap.release()
-        cv2.destroyAllWindows()
         return self.user_score
