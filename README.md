@@ -4,7 +4,7 @@
 
 > mediapipe가 제공하는 Hand landmark detection, Face detection. Face landmark을 사용한다.
 
-> mediapipe Solutions site
+> mediapipe Solutions sites
 * https://developers.google.com/mediapipe/solutions/vision/hand_landmarker
 * https://developers.google.com/mediapipe/solutions/vision/face_detector
 * https://developers.google.com/mediapipe/solutions/vision/face_landmarker
