@@ -5,7 +5,7 @@ import time
 import math
 
 class CHECKOUT_STUDYING :
-    def __init__(self, time) :
+    def __init__(self, time, user_id) :
         # hand detection
         self.mp_hands = mp.solutions.hands
         self.middle_finger_mcp_list = []
@@ -17,8 +17,10 @@ class CHECKOUT_STUDYING :
         self.mp_face_detection = mp.solutions.face_detection
         self.mp_face_mesh = mp.solutions.face_mesh
         self.eye_closed_time = None
-      
-        self.user_score = 100
+        
+        self.user_score = {}
+        self.user_id = user_id
+        self.user_score[f'{self.user_id}'] = 100
         
         # set time
         self.time = time
@@ -133,7 +135,7 @@ class CHECKOUT_STUDYING :
     def start_detection(self, image_path : str) :
         image = cv2.imread(image_path)
         if self.face_checkout(image) and self.hand_checkout(image) :
-            if self.user_score > 0 :
-                self.user_score -= 2
+            if self.user_score[f'{self.user_id}'] > 0 :
+                self.user_score[f'{self.user_id}'] -= 2
             
         return self.user_score
